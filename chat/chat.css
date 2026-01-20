@@ -1,0 +1,66 @@
+
+.chat-widget{
+ position:fixed;bottom:20px;right:20px;width:340px;
+ background:#1A0F0A;border:2px solid #C89B3C;border-radius:14px;
+ box-shadow:0 0 20px rgba(200,155,60,.25);
+ overflow:hidden;z-index:9999;
+ animation:chatFadeIn .6s ease;
+}
+@keyframes chatFadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1}}
+
+.chat-header{
+ background:linear-gradient(90deg,#3A241B,#1A0F0A);
+ padding:12px;color:#C89B3C;font-weight:bold;
+ cursor:pointer;text-align:center;
+}
+
+.chat-body{display:none;flex-direction:column;height:380px}
+.chat-messages{flex:1;padding:12px;overflow-y:auto;font-size:13px}
+
+.chat-msg{
+ margin-bottom:8px;
+ padding:8px 10px;
+ border-radius:10px;
+ max-width:85%;
+ animation:msgIn .25s ease;
+}
+@keyframes msgIn{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
+
+.chat-player{
+ background:#2B1A14;
+ align-self:flex-start;
+ border:1px solid #3A241B;
+}
+.chat-admin{
+ background:#3A241B;
+ border:1px solid #C89B3C;
+ color:#C89B3C;
+ align-self:flex-end;
+}
+
+.chat-author{
+ font-size:11px;
+ opacity:.7;
+ margin-bottom:2px;
+}
+
+.chat-input{display:flex;border-top:1px solid #3A241B}
+.chat-input input{
+ flex:1;border:none;padding:10px;background:#2B1A14;color:#F5E6C8;
+}
+.chat-input button{
+ background:#C89B3C;border:none;padding:10px 14px;cursor:pointer;
+}
+
+
+.chat-badge{
+ position:absolute;
+ top:6px;
+ right:10px;
+ background:#C89B3C;
+ color:#1A0F0A;
+ font-size:11px;
+ padding:2px 6px;
+ border-radius:10px;
+ display:none;
+}
