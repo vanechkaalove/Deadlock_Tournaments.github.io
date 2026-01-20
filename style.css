@@ -1,0 +1,221 @@
+/* ===== БАЗА ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #2B1A14;
+  color: #F5E6C8;
+}
+
+header {
+  background: #1A0F0A;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #C89B3C;
+  flex-wrap: wrap;
+}
+
+.logo {
+  color: #C89B3C;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* ===== НАВИГАЦИЯ ===== */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: #F5E6C8;
+  cursor: pointer;
+  padding: 6px 8px;
+  font-size: 14px;
+}
+
+/* ===== ОСНОВА ===== */
+main {
+  padding: 20px;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* ===== КАРТОЧКИ ===== */
+.card {
+  background: #3A241B;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* ===== КНОПКИ ===== */
+.primary {
+  background: #C89B3C;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ===== АДМИН ===== */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.admin-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+.admin-menu button {
+  font-size: 13px;
+}
+
+.admin-tab {
+  display: none;
+}
+
+.admin-tab.active {
+  display: block;
+}
+
+/* ===== INPUT ===== */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* ===== ПАРОЛЬ ===== */
+.password-wrapper {
+  display: flex;
+  gap: 6px;
+}
+
+.eye-btn {
+  background: #3A241B;
+  border: 1px solid #1A0F0A;
+  color: #F5E6C8;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 0 10px;
+}
+
+/* ========================= */
+/* 📱 МОБИЛЬНАЯ ВЕРСИЯ */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  nav button {
+    flex: 1;
+    text-align: center;
+    font-size: 13px;
+    padding: 8px 0;
+    border: 1px solid #3A241B;
+    border-radius: 6px;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  .card {
+    font-size: 13px;
+  }
+
+  .primary {
+    width: 100%;
+  }
+
+  .admin-header button {
+    width: auto;
+  }
+
+  .admin-menu button {
+    flex: 1;
+  }
+}
+
+/* ========================= */
+/* 📱 МАЛЕНЬКИЕ ТЕЛЕФОНЫ */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+  .logo {
+    font-size: 18px;
+  }
+
+  nav {
+    gap: 4px;
+  }
+
+  nav button {
+    font-size: 12px;
+    padding: 6px 0;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  input {
+    font-size: 14px;
+  }
+
+  .primary {
+    font-size: 14px;
+  }
+}

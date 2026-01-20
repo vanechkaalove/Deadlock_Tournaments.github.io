@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Deadlock Tournaments</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">DEADLOCK TOURNAMENTS</div>
+  <nav>
+    <button onclick="showPage('home')">Главная</button>
+    <button onclick="showPage('tournaments')">Турниры</button>
+    <button onclick="showPage('bracket')">Сетка</button>
+    <button onclick="showPage('login')">Админ</button>
+  </nav>
+</header>
+
+<main>
+
+<section id="home" class="page active">
+  <h1>Турниры нового уровня</h1>
+  <p>Соревнуйся. Побеждай. Забирай призы.</p>
+  <h2>Участники</h2>
+  <div id="participants-public"></div>
+</section>
+
+<section id="tournaments" class="page">
+  <h1>Турниры</h1>
+  <div id="tournament-public"></div>
+</section>
+
+<section id="bracket" class="page">
+  <h1>Сетка турниров</h1>
+  <div id="bracket-public"></div>
+</section>
+
+<section id="login" class="page">
+  <h1>Вход в админ-панель</h1>
+  <div class="card">
+    <input id="loginInput" placeholder="Логин">
+    <div class="password-wrapper">
+      <input id="passwordInput" type="password" placeholder="Пароль">
+      <button class="eye-btn" onclick="togglePassword()">👁️</button>
+    </div>
+    <button class="primary" onclick="adminLogin()">Войти</button>
+    <p id="error"></p>
+  </div>
+</section>
+
+<section id="admin" class="page">
+
+  <div class="admin-header">
+    <h1>Админ-панель</h1>
+    <button onclick="logout()">Выйти</button>
+  </div>
+
+  <div class="admin-menu">
+    <button onclick="adminTab('admin-tournaments')">Турниры</button>
+    <button onclick="adminTab('admin-users')">Участники</button>
+    <button onclick="adminTab('admin-bracket')">Матчи</button>
+    <button onclick="adminTab('admin-stats')">Статистика</button>
+    <button onclick="adminTab('admin-settings')">Настройки</button>
+    <button onclick="adminTab('admin-logs')">Логи</button>
+  </div>
+
+  <!-- ТУРНИРЫ -->
+  <div id="admin-tournaments" class="admin-tab active">
+    <h2>Создание турнира</h2>
+    <input id="t-name" placeholder="Название">
+    <input id="t-format" placeholder="Формат">
+    <input id="t-prize" placeholder="Приз">
+    <input id="t-start" type="date">
+    <input id="t-end" type="date">
+    <button class="primary" onclick="addTournament()">Создать</button>
+    <div id="t-admin-list"></div>
+  </div>
+
+  <!-- УЧАСТНИКИ -->
+  <div id="admin-users" class="admin-tab">
+    <h2>Участники</h2>
+    <input id="p-nick" placeholder="Ник">
+    <input id="p-name" placeholder="Имя">
+    <input id="p-age" type="number" placeholder="Возраст">
+    <input id="p-country" placeholder="Страна">
+    <button class="primary" onclick="addParticipant()">Добавить</button>
+    <div id="participants-admin-list"></div>
+  </div>
+
+  <!-- МАТЧИ -->
+  <div id="admin-bracket" class="admin-tab">
+    <h2>Матчи</h2>
+    <input id="b-team1" placeholder="Команда 1">
+    <input id="b-team2" placeholder="Команда 2">
+    <input id="b-score" placeholder="Счёт">
+    <h3>Участники матча</h3>
+    <div id="match-participants"></div>
+    <button class="primary" onclick="addMatch()">Добавить матч</button>
+    <div id="bracket-admin-list"></div>
+  </div>
+
+  <!-- СТАТИСТИКА -->
+  <div id="admin-stats" class="admin-tab">
+    <h2>Статистика</h2>
+    <div id="stats-content"></div>
+  </div>
+
+  <!-- НАСТРОЙКИ -->
+  <div id="admin-settings" class="admin-tab">
+    <h2>Настройки</h2>
+    <input id="site-title-setting" placeholder="Название сайта">
+    <label>
+      <input type="checkbox" id="registration-toggle"> Разрешить регистрацию
+    </label><br><br>
+    <button class="primary" onclick="saveSettings()">Сохранить</button>
+  </div>
+
+  <!-- ЛОГИ -->
+  <div id="admin-logs" class="admin-tab">
+    <h2>Логи</h2>
+    <div id="logs-list"></div>
+  </div>
+
+</section>
+
+</main>
+<script src="script.js"></script>
+
+<link rel='stylesheet' href='chat/chat.css'>
+<script src='chat/chat.js'></script>
+</body>
+</html>
